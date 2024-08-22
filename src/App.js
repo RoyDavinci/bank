@@ -30,27 +30,11 @@ function App() {
 			path: "/",
 			element: <Dashboard />,
 			children: [
-				{
-					path: "/",
-					element: <DisputeTable />,
-				},
-				{
-					path: "/create-dispute",
-					element: <CreateDispute />,
-				},
-				{
-					path: "/edit/dispute/:id",
-					element: <EditDispute />,
-				},
-				{
-					path: "/edit-user/:id",
-					element: <EditUser />,
-				},
-				{
-					path: "/user-management",
-					element: <UserManagement />,
-				},
-
+				{ path: "/", element: <DisputeTable /> },
+				{ path: "/create-dispute", element: <CreateDispute /> },
+				{ path: "/edit/dispute/:id", element: <EditDispute /> },
+				{ path: "/edit-user/:id", element: <EditUser /> },
+				{ path: "/user-management", element: <UserManagement /> },
 				{ path: "/create-user", element: <CreateUser /> },
 				{ path: "/dispute/:id", element: <DisputeDetails /> },
 			],

@@ -140,7 +140,14 @@ const DisputeTable = () => {
 			);
 			console.log(data);
 
-			if (data.message === "Unauthorized" || data.message.includes("Invalid")) {
+			if (!data) {
+				setLoading(false);
+				localStorage.clear();
+				navigate("/login");
+			} else if (
+				data.message === "Unauthorized" ||
+				data.message.includes("Invalid")
+			) {
 				setLoading(false);
 				localStorage.clear();
 				navigate("/login");

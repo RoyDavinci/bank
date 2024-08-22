@@ -166,6 +166,7 @@ const DisputeTable = () => {
 		} catch (error) {
 			setLoading(false);
 			setError("Failed to load data. Please try again later.");
+			navigate("/login");
 
 			if (
 				error.response.data.message === "Unauthorized" ||
@@ -176,6 +177,7 @@ const DisputeTable = () => {
 				navigate("/login");
 				setError("Failed to load data. Please try again later.");
 			}
+			navigate("/login");
 			setLoading(false);
 			setError("Failed to load data. Please try again later.");
 		}

@@ -33,7 +33,10 @@ const Login = () => {
 				formData
 			);
 
-			if (data.status) {
+			if (!data) {
+				toast.error("An Error occured");
+				return;
+			} else if (data.status) {
 				login(data.token);
 				localStorage.setItem("role", data.role);
 				localStorage.setItem("token", data.token);
@@ -46,7 +49,7 @@ const Login = () => {
 				// alert("Login successful");
 			} else {
 				// alert("Login failed");
-				toast.error(data.message);
+				toast.error(data.message ? data.message : "An error occured");
 			}
 		} catch (error) {
 			toast.error(
